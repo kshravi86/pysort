@@ -1,0 +1,60 @@
+<!DOCTYPE html> <html>
+     <head>     <link href="prism.css" rel="stylesheet"> <script type="text/javascript-lazy"  >  	var admobid = {}; if( /(android)/i.test(navigator.userAgent) ) {     admobid = {            banner:'ca-app-pub-5170973579111533/1085713519',        interstitial: 'ca-app-pub-5170973579111533/8936283376'     }; } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {     admobid = {            banner: 'ca-app-pub-6869992474017983/4806197152',         interstitial: 'ca-app-pub-6869992474017983/7563979554'    }; } else {     admobid = {              banner: 'ca-app-pub-6869992474017983/8878394753',         interstitial: 'ca-app-pub-6869992474017983/1355127956'     }; } if(( /(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent) )) {     document.addEventListener('deviceready', initApp, false); } else {     initApp(); }  function initApp() {     if (! AdMob ) { alert( 'admob plugin not ready' ); return; }       AdMob.createBanner( {         adId: admobid.banner,         isTesting: false,         overlap: false,         offsetTopBar: false,         position: AdMob.AD_POSITION.BOTTOM_CENTER,         bgColor: 'black'     } );      AdMob.prepareInterstitial({         adId: admobid.interstitial,         autoShow: true     }); }    </script></head>
+ <body style="background-color:white;" >
+<div class="topcoat-navigation-bar" ng-controller="HomeCtrl">
+ <div class="topcoat-navigation-bar__item left quarter">
+<a class="topcoat-icon-button--quiet" ng-click="slidePage('/','modal')">
+<span class="topcoat-icon home-icon"></span></a></div><div class="topcoat-navigation-bar__item center half"><h1 class="topcoat-navigation-bar__title">Cake</h1></div></div><script type="text/javascript" src="prism.js"></script><pre  ng-prism  class="language-python"><code> 
+  #!/usr/bin/env python
+
+"""
+SetOfStacks should be composed of several stacks, and should create a new
+stack one the previous one exceeds capacity. SetOfStacks push and pop methods
+should behave identically to a single stack.
+"""
+
+class SetOfStacks(list):
+
+    def __init__(self, capacity=4):
+        self.stacks = []
+        self.last_stack = []
+        self.capacity = capacity
+        self.stacks.append(self.last_stack)
+
+    def __repr__(self):
+        return str(self.stacks)
+
+    def push(self, number):
+        last_stack = self.last_stack
+        if len(last_stack) is self.capacity:
+            last_stack = []
+            self.last_stack = last_stack
+            self.stacks.append(last_stack)
+        last_stack.append(number)
+
+    def pop(self):
+        last_stack = self.last_stack
+        number = last_stack.pop()
+        if len(last_stack) is 0:
+            self.stacks.pop()
+            self.last_stack = self.stacks[-1]
+        return number
+
+
+def main():
+    stack = SetOfStacks()
+    stack.push(1)
+    stack.push(2)
+    stack.push(3)
+    stack.push(4)
+    stack.push(5)
+    stack.push(6)
+    print stack
+    stack.pop()
+    stack.pop()
+    stack.pop()
+    print stack
+
+if __name__ == '__main__':
+    main()
+</code></pre></body></html>    
