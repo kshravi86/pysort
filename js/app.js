@@ -21,7 +21,7 @@ var myApp = angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.d
         $routeProvider.when('/view6', {templateUrl: 'partials/ctci/1_8_substring_rotation.py.html'});
         $routeProvider.when('/view7', {templateUrl: 'partials/ctci/20_1_custom_add.py.html'});
         $routeProvider.when('/view8', {templateUrl: 'partials/the_tuple.py.html'});
-		$routeProvider.when('/view9',{templateUrl:'partials/3_2_stack_with_minimum.py.html'});
+		$routeProvider.when('/view9',{templateUrl:'partials/ctci/3_2_stack_with_minimum.py.html'});
        $routeProvider.when('/view10',{templateUrl:'partials/do_bytesio.py.html'});
 	   $routeProvider.when("/view11",{templateUrl:'partials/do_stringio.py.html'});
 	   $routeProvider.when("/view12",{templateUrl:'partials/use_json.py.html'});
