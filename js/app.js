@@ -15,7 +15,7 @@ var myApp = angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.d
         $routeProvider.when('/', {templateUrl: 'partials/homeView.html', controller: 'HomeCtrl'});
         $routeProvider.when('/view1', {templateUrl: 'partials/ctci/1_2_reverse.py.html'});
         $routeProvider.when('/view2', {templateUrl: 'partials/ctci/1_3_duplicate_characters.py.html'});
-        $routeProvider.when('/view3', {templateUrl: 'partials/do_print.py.html'});
+        $routeProvider.when('/view3', {templateUrl: 'partials/ctci/1_4_anagrams.py.html'});
         $routeProvider.when('/view4', {templateUrl: 'partials/do_while.py.html'});
         $routeProvider.when('/view5', {templateUrl: 'partials/the_dict.py.html'});
         $routeProvider.when('/view6', {templateUrl: 'partials/the_list.py.html'});
