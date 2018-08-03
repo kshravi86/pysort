@@ -23,7 +23,7 @@ var myApp = angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.d
         $routeProvider.when('/view8', {templateUrl: 'partials/the_tuple.py.html'});
 		$routeProvider.when('/view9',{templateUrl:'partials/ctci/3_2_stack_with_minimum.py.html'});
        $routeProvider.when('/view10',{templateUrl:'partials/ctci/3_3_set_of_stacks.py.html'});
-	   $routeProvider.when("/view11",{templateUrl:'partials/do_stringio.py.html'});
+	   $routeProvider.when("/view11",{templateUrl:'partials/ctci/3_4_hanoi.py.html'});
 	   $routeProvider.when("/view12",{templateUrl:'partials/use_json.py.html'});
 	   $routeProvider.when("/view13",{templateUrl:'partials/28. multi line print.html'});
 	   $routeProvider.when("/view14",{templateUrl:'partials/24. python lists vs tuples.html'});
