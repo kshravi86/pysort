@@ -31,7 +31,7 @@ var myApp = angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.d
 	   $routeProvider.when("/view16",{templateUrl:'partials/ctci/7_1_deck_of_cards.py.html'});
 	   $routeProvider.when("/view17",{templateUrl:'partials/ctci/non_repeating_character.py.html'});
 	   $routeProvider.when("/view18",{templateUrl:'partials/ch1/02-is-permutation.py.html'});
-	   $routeProvider.when("/view19",{templateUrl:'partials/P72_PythonLambda.py.html'});
+	   $routeProvider.when("/view19",{templateUrl:'partials/ch1/06-string-compression.py.html'});
 	  $routeProvider.when("/view20",{templateUrl:'partials/P12_DecimalToBinary.py.html'});
 	  $routeProvider.when("/view21",{templateUrl:'partials/P34_Stack.py.html'});
 	  $routeProvider.when("/view22",{templateUrl:'partials/P53_ShellSort.py.html'});
