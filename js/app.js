@@ -33,7 +33,7 @@ var myApp = angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.d
 	   $routeProvider.when("/view18",{templateUrl:'partials/ch1/02-is-permutation.py.html'});
 	   $routeProvider.when("/view19",{templateUrl:'partials/ch1/06-string-compression.py.html'});
 	  $routeProvider.when("/view20",{templateUrl:'partials/ch1/07-rotate-matrix.py.html'});
-	  $routeProvider.when("/view21",{templateUrl:'partials/P34_Stack.py.html'});
+	  $routeProvider.when("/view21",{templateUrl:'partials/ch1/03-urlify.py.html'});
 	  $routeProvider.when("/view22",{templateUrl:'partials/P53_ShellSort.py.html'});
 	  $routeProvider.when("/view23",{templateUrl:'partials/IQtest.html'});
 		$routeProvider.when("/view24",{templateUrl:'partials/StringTask.html'});
