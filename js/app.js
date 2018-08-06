@@ -35,7 +35,7 @@ var myApp = angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.d
 	  $routeProvider.when("/view20",{templateUrl:'partials/ch1/07-rotate-matrix.py.html'});
 	  $routeProvider.when("/view21",{templateUrl:'partials/ch1/03-urlify.py.html'});
 	  $routeProvider.when("/view22",{templateUrl:'partials/ch5/02-binary-to-string.py.html'});
-	  $routeProvider.when("/view23",{templateUrl:'partials/IQtest.html'});
+	  $routeProvider.when("/view23",{templateUrl:'partials/ch5/06-conversion.py.html'});
 		$routeProvider.when("/view24",{templateUrl:'partials/StringTask.html'});
 	 $routeProvider.when("/view25",{templateUrl:'partials/k-String.html'});
 		$routeProvider.when("/view26",{templateUrl:'partials/Magnets.html'});
