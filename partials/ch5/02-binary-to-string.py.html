@@ -1,0 +1,48 @@
+<!DOCTYPE html> <html>
+     <head>     <link href="prism.css" rel="stylesheet"> <script type="text/javascript-lazy"  >  	var admobid = {}; if( /(android)/i.test(navigator.userAgent) ) {     admobid = {            banner:'ca-app-pub-5170973579111533/1085713519',        interstitial: 'ca-app-pub-5170973579111533/8936283376'     }; } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {     admobid = {            banner: 'ca-app-pub-6869992474017983/4806197152',         interstitial: 'ca-app-pub-6869992474017983/7563979554'    }; } else {     admobid = {              banner: 'ca-app-pub-6869992474017983/8878394753',         interstitial: 'ca-app-pub-6869992474017983/1355127956'     }; } if(( /(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent) )) {     document.addEventListener('deviceready', initApp, false); } else {     initApp(); }  function initApp() {     if (! AdMob ) { alert( 'admob plugin not ready' ); return; }       AdMob.createBanner( {         adId: admobid.banner,         isTesting: false,         overlap: false,         offsetTopBar: false,         position: AdMob.AD_POSITION.BOTTOM_CENTER,         bgColor: 'black'     } );      AdMob.prepareInterstitial({         adId: admobid.interstitial,         autoShow: true     }); }    </script></head>
+ <body style="background-color:white;" >
+<div class="topcoat-navigation-bar" ng-controller="HomeCtrl">
+ <div class="topcoat-navigation-bar__item left quarter">
+<a class="topcoat-icon-button--quiet" ng-click="slidePage('/','modal')">
+<span class="topcoat-icon home-icon"></span></a></div><div class="topcoat-navigation-bar__item center half"><h1 class="topcoat-navigation-bar__title">Cake</h1></div></div><script type="text/javascript" src="prism.js"></script><pre  ng-prism  class="language-python"><code> 
+  # Return a binary string representation of the given floating point number
+# between 0 and 1 as long as it accurately fits in 32 bits.
+
+import ctypes
+
+def binary_to_string(number):
+  if number == 1:
+    return "1.0"
+  if number == 0:
+    return "0.0"
+  if number < 0 or number > 1:
+    return Exception("Out of bounds")
+  normalized = bits_for(number + 1.0)
+  bits = normalized & ((1 << 52) - 1)
+  if normalized & ((1 << 22) - 1):
+    return Exception("Insufficient precision")
+  digits = ["0."]
+  bit = (1 << 51)
+  while bits:
+    if bits & bit:
+      digits.append("1")
+    else:
+      digits.append("0")
+    bits &= ~bit
+    bit >>= 1
+  return "".join(digits)
+
+def bits_for(number):
+  return ctypes.c_longlong.from_buffer(ctypes.c_double(number)).value
+
+import unittest
+
+class Test(unittest.TestCase):
+  def test_binary_to_string(self):
+    self.assertEqual(binary_to_string(0.75), "0.11")
+    self.assertEqual(binary_to_string(0.625), "0.101")
+    self.assertEqual(binary_to_string(0.3).message, "Insufficient precision")
+
+if __name__ == "__main__":
+  unittest.main()
+</code></pre></body></html>    
