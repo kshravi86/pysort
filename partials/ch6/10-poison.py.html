@@ -1,0 +1,50 @@
+<!DOCTYPE html> <html>
+     <head>     <link href="prism.css" rel="stylesheet"> <script type="text/javascript-lazy"  >  	var admobid = {}; if( /(android)/i.test(navigator.userAgent) ) {     admobid = {            banner:'ca-app-pub-5170973579111533/1085713519',        interstitial: 'ca-app-pub-5170973579111533/8936283376'     }; } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {     admobid = {            banner: 'ca-app-pub-6869992474017983/4806197152',         interstitial: 'ca-app-pub-6869992474017983/7563979554'    }; } else {     admobid = {              banner: 'ca-app-pub-6869992474017983/8878394753',         interstitial: 'ca-app-pub-6869992474017983/1355127956'     }; } if(( /(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent) )) {     document.addEventListener('deviceready', initApp, false); } else {     initApp(); }  function initApp() {     if (! AdMob ) { alert( 'admob plugin not ready' ); return; }       AdMob.createBanner( {         adId: admobid.banner,         isTesting: false,         overlap: false,         offsetTopBar: false,         position: AdMob.AD_POSITION.BOTTOM_CENTER,         bgColor: 'black'     } );      AdMob.prepareInterstitial({         adId: admobid.interstitial,         autoShow: true     }); }    </script></head>
+ <body style="background-color:white;" >
+<div class="topcoat-navigation-bar" ng-controller="HomeCtrl">
+ <div class="topcoat-navigation-bar__item left quarter">
+<a class="topcoat-icon-button--quiet" ng-click="slidePage('/','modal')">
+<span class="topcoat-icon home-icon"></span></a></div><div class="topcoat-navigation-bar__item center half"><h1 class="topcoat-navigation-bar__title">Cake</h1></div></div><script type="text/javascript" src="prism.js"></script><pre  ng-prism  class="language-python"><code> 
+  # Detect which of 1000 bottles contains poison using 10 detection strips.
+
+def detect_poison(bottles, strips):
+  for b, bottle in enumerate(bottles):
+    for s, strip in enumerate(strips):
+      if b & (1 << s):
+        strip.add_drop_from(bottle)
+  index = 0
+  for s, strip in enumerate(strips):
+    strip.wait()
+    if strip.detected_poison:
+      index |= (1 << s)
+  return index
+
+class Bottle():
+  def __init__(self, poison):
+    self.poison = poison
+
+class Strip():
+  def __init__(self):
+    self.detected_poison = False
+    self.drops_from = []
+  
+  def add_drop_from(self, bottle):
+    self.drops_from.append(bottle)
+  
+  def wait(self):
+    for drop in self.drops_from:
+      if drop.poison:
+        self.detected_poison = True
+        return
+
+import unittest
+
+class Test(unittest.TestCase):
+  def test_detect_posion(self):
+    bottles = [Bottle(ix == 367) for ix in xrange(1000)]
+    strips = [Strip() for i in xrange(10)]
+    self.assertEqual(detect_poison(bottles, strips), 367)
+
+if __name__ == "__main__":
+  unittest.main()
+</code></pre></body></html>    

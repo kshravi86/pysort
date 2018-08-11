@@ -37,7 +37,7 @@ var myApp = angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.d
 	  $routeProvider.when("/view22",{templateUrl:'partials/ch5/02-binary-to-string.py.html'});
 	  $routeProvider.when("/view23",{templateUrl:'partials/ch5/06-conversion.py.html'});
 		$routeProvider.when("/view24",{templateUrl:'partials/ch5/07-pairwise-swap.py.html'});
-	 $routeProvider.when("/view25",{templateUrl:'partials/k-String.html'});
+	 $routeProvider.when("/view25",{templateUrl:'partials/ch6/01-pill-bottles.py.html'});
 		$routeProvider.when("/view26",{templateUrl:'partials/Magnets.html'});
 		$routeProvider.when("/view27",{templateUrl:'partials/Word.html'});
 		$routeProvider.when("/view28",{templateUrl:'partials/Towers.html'});
