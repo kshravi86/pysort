@@ -1,0 +1,75 @@
+<!DOCTYPE html> <html>
+     <head>     <link href="prism.css" rel="stylesheet"> <script type="text/javascript-lazy"  >  	var admobid = {}; if( /(android)/i.test(navigator.userAgent) ) {     admobid = {            banner:'ca-app-pub-5170973579111533/1085713519',        interstitial: 'ca-app-pub-5170973579111533/8936283376'     }; } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {     admobid = {            banner: 'ca-app-pub-6869992474017983/4806197152',         interstitial: 'ca-app-pub-6869992474017983/7563979554'    }; } else {     admobid = {              banner: 'ca-app-pub-6869992474017983/8878394753',         interstitial: 'ca-app-pub-6869992474017983/1355127956'     }; } if(( /(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent) )) {     document.addEventListener('deviceready', initApp, false); } else {     initApp(); }  function initApp() {     if (! AdMob ) { alert( 'admob plugin not ready' ); return; }       AdMob.createBanner( {         adId: admobid.banner,         isTesting: false,         overlap: false,         offsetTopBar: false,         position: AdMob.AD_POSITION.BOTTOM_CENTER,         bgColor: 'black'     } );      AdMob.prepareInterstitial({         adId: admobid.interstitial,         autoShow: true     }); }    </script></head>
+ <body style="background-color:white;" >
+<div class="topcoat-navigation-bar" ng-controller="HomeCtrl">
+ <div class="topcoat-navigation-bar__item left quarter">
+<a class="topcoat-icon-button--quiet" ng-click="slidePage('/','modal')">
+<span class="topcoat-icon home-icon"></span></a></div><div class="topcoat-navigation-bar__item center half"><h1 class="topcoat-navigation-bar__title">Cake</h1></div></div><script type="text/javascript" src="prism.js"></script><pre  ng-prism  class="language-python"><code> 
+  from __future__ import print_function
+from random import randint
+from tempfile import TemporaryFile
+import numpy as np
+import math
+
+
+
+def _inPlaceQuickSort(A,start,end):  
+    count = 0
+    if start<end:
+        pivot=randint(start,end)
+        temp=A[end]
+        A[end]=A[pivot]
+        A[pivot]=temp
+        
+        p,count= _inPlacePartition(A,start,end)
+        count += _inPlaceQuickSort(A,start,p-1)
+        count += _inPlaceQuickSort(A,p+1,end)
+    return count
+
+def _inPlacePartition(A,start,end):
+    
+    count = 0
+    pivot= randint(start,end)
+    temp=A[end]
+    A[end]=A[pivot]
+    A[pivot]=temp
+    newPivotIndex=start-1
+    for index in range(start,end):
+               
+        count += 1
+        if A[index]<A[end]:#check if current val is less than pivot value
+            newPivotIndex=newPivotIndex+1
+            temp=A[newPivotIndex]
+            A[newPivotIndex]=A[index]
+            A[index]=temp
+    
+    temp=A[newPivotIndex+1]
+    A[newPivotIndex+1]=A[end]
+    A[end]=temp
+    return newPivotIndex+1,count
+    
+outfile = TemporaryFile()    
+p = 100 # 1000 elements are to be sorted
+
+
+
+
+mu, sigma = 0, 1 # mean and standard deviation
+X = np.random.normal(mu, sigma, p)
+np.save(outfile, X)
+print('The array is')
+print(X)
+
+  
+    
+
+
+
+outfile.seek(0)  # using the same array
+M = np.load(outfile)
+r = (len(M)-1)
+z = _inPlaceQuickSort(M,0,r) 
+
+print("No of Comparisons for 100 elements selected from a standard normal distribution is :")
+print(z)
+</code></pre></body></html>    
