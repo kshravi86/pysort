@@ -16,12 +16,12 @@ var myApp = angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.d
         $routeProvider.when('/view1', {templateUrl: 'partials/sort/bubble_sort.py.html'});
         $routeProvider.when('/view2', {templateUrl: 'partials/sort/bucket_sort.py.html'});
         $routeProvider.when('/view3', {templateUrl: 'partials/sort/merge_sort.py.html'});
-        $routeProvider.when('/view4', {templateUrl: 'partials/ctci/1_5_spaces.py.html'});
-        $routeProvider.when('/view5', {templateUrl: 'partials/ctci/1_7_matrix_0.py.html'});
-        $routeProvider.when('/view6', {templateUrl: 'partials/ctci/1_8_substring_rotation.py.html'});
-        $routeProvider.when('/view7', {templateUrl: 'partials/ctci/20_1_custom_add.py.html'});
+        $routeProvider.when('/view4', {templateUrl: 'partials/sort/insertion_sort.py.html'});
+        $routeProvider.when('/view5', {templateUrl: 'partials/sort/quick_sort.py.html'});
+        $routeProvider.when('/view6', {templateUrl: 'partials/sort/selection_sort.py.html'});
+        $routeProvider.when('/view7', {templateUrl: 'partials/sort/shell_sort.py.html'});
         $routeProvider.when('/view8', {templateUrl: 'partials/the_tuple.py.html'});
-		$routeProvider.when('/view9',{templateUrl:'partials/ctci/3_2_stack_with_minimum.py.html'});
+		$routeProvider.when('/view9',{templateUrl:'partials/sort/timsort.py.html'});
        $routeProvider.when('/view10',{templateUrl:'partials/ctci/3_3_set_of_stacks.py.html'});
 	   $routeProvider.when("/view11",{templateUrl:'partials/ctci/3_4_hanoi.py.html'});
 	   $routeProvider.when("/view12",{templateUrl:'partials/ctci/3_5_myqueue.py.html'});
